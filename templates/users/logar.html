@@ -1,0 +1,20 @@
+{% extends 'base.html' %} 
+{% load static %} 
+
+{% block title %} 
+Clinica | Login 
+{% endblock title %} 
+
+{% block scripts %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}"> 
+{% endblock scripts %} 
+
+{% block body %} 
+
+<form action="" method="exames">
+{% csrf_token %}
+{{form.as_p}}
+<input type="submit" value="Logar">
+</form>
+
+{% endblock body %}

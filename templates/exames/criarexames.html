@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %} {% load widget_tweaks %}
+{% block title %} Clínica | Criar Exame {% endblock title %}
+{% block style %}
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}"> 
+{% endblock style %} {% block body %}
+
+<h3>Adicionar Exame</h3>
+
+<form action="" method="exames">
+    {% csrf_token %}
+    <div class="medico">Médico: {% render_field form.medico %}</div><br>
+    <div class="diagnostico">Diagnóstico: {% render_field form.diagnostico %}</div><br>
+    <div class="sintomas">Sintomas: {% render_field form.sintomas %}</div><br>
+    <div class="medicamento">Medicamento: {% render_field form.medicamento %}</div><br>
+    <div class="paciente">Paciente: {% render_field form.paciente %}</div><br>
+    <div class="rg">RG: {% render_field form.rg %}</div><br>
+    <div class="cpf">CPF: {% render_field form.cpf %}</div><br>
+    <button type="submit" class="btn btn-dark">Criar</button>
+
+</form>
+
+{% endblock body %}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+ {% load static %}
+{% load widget_tweaks %} 
+{% block title %} Clínica | Deletar Exame {% endblock title %} 
+{% block style %}
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}"> {% endblock style %} {% block body %}
+<form action='' method="post">
+    
+    <p>Você tem certeza que quer deletar o exame ?</p>
+   
+    <br>
+    <br>
+    <button type="submit" class="btn btn-dark">Deletar</button>
+    
+
+</form>
+{% endblock body %}

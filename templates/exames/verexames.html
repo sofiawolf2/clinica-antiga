@@ -1,0 +1,49 @@
+{% extends 'base.html' %} 
+{% load static %} {% block title %} Clínica | Exames {% endblock title %}
+{% block scripts %}
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}"> 
+{% endblock scripts %} 
+{% block body %} 
+
+
+{% for u in posts %}
+
+<br><br><br>
+
+<div class="tudo">
+<div class="bloquinho">
+    <br><br>
+
+   
+    <center><p>{{u.diagnostico}} </p></center>
+    <div class="medico"> <p> - Médico: {{u.medico}} </p> </div>
+    <div class="diagnostico"> <p> - Diagnóstico: {{u.diagnostico}} </p> </div>
+    <div class="medicamento"> <p> - Medicamento: {{u.medicamento}} </p> </div>
+    <div class="paciente"> <p> - Paciente: {{u.paciente}} </p> </div>
+    <div class="sintomas"> <p> - Sintomas: {{u.sintomas}} </p> </div>
+    <div class="cpf"> <p> - CPF: {{u.cpf}} </p> </div>
+    <div class="rg"> <p> - RG: {{u.rg}} </p> </div>
+    <center> <p> {{u.created_at}} </p> </center>
+ 
+    <br>
+   
+    <div class="btn-group">
+        <a href="{% url 'exames:editar_exame' u.id%}"  class="btn btn-primary">Alterar</a>
+        <a href="{% url 'exames:deletar_exame' u.id%}"  class="btn btn-primary">Deletar</a>
+    </div>
+
+
+
+</div>
+</div>
+
+{% empty %}
+
+<center><p>Sem Exames :(</p></center> 
+<div class="btn-group">
+<a href="{% url 'exames:add_exame' %}" class="btn btn-primary">Adicionar Exame</a> 
+</div>
+
+{% endfor %}
+{% endblock body %}

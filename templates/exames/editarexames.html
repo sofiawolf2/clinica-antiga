@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %} 
+% load widget_tweaks %} 
+{% block title %} Clínica | Modificar Exames {% endblock title %} 
+{% block style %}
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}"> {% endblock style %} {% block body %}
+
+<h3>Modificar Exame</h3>
+<form action='' method="exames">
+    {% csrf_token %}
+    <div class="medico"> <p> - Médico: {{u.medico}} </p> </div>
+    <div class="diagnostico"> <p> - Diagnóstico: {{u.diagnostico}} </p> </div>
+    <div class="medicamento"> <p> - Medicamento: {{u.medicamento}} </p> </div>
+    <div class="paciente"> <p> - Paciente: {{u.paciente}} </p> </div>
+    <div class="sintomas"> <p> - Sintomas: {{u.sintomas}} </p> </div>
+    <div class="cpf"> <p> - CPF: {{u.cpf}} </p> </div>
+    <div class="rg"> <p> - RG: {{u.rg}} </p> </div>
+    <button type="submit" class="btn btn-dark">Modificar</button>
+</form>
+
+{% endblock body %}
